@@ -1,0 +1,260 @@
+body {
+  margin-left: 1em;
+  margin-right: 1em;
+  background: #1a1a1a   !important; /* Dark background */
+  font-family: 'Fira Code', monospace;
+  color: #e0e0e0; /* Light text color */
+
+}
+
+.mr-10 {
+  margin-right:10px;
+}
+.ml-2em {
+  margin-left: 2.4em;
+}
+.green {
+  color: #9cdb6b; /* A lighter green */
+}
+
+.red {
+  color: #f76c6c; /* A lighter red */
+  font-weight: 800;
+}
+.white {
+  color: white;
+  font-weight: 500;
+}
+a {
+  color: #8ab4f8; /* Light blue for links */
+  font-weight: 200;
+  text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+  color: #FFDE4D; /* Lighter blue on hover */
+  text-decoration: none; /* Underline on hover */
+}
+
+
+textarea {
+  background-color: #2e2e2e; /* Dark background for textarea */
+  color: #F5F5F5; /* Light text color */
+  border: 1px solid #4a4a4a; /* Subtle border color */
+  padding: 10px;
+  font-family: Courier;
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical; /* Allow vertical resizing */
+  caret-color: gold;
+
+}
+@keyframes NslideUp {
+  from {
+      opacity: 0;
+      transform: translate3d(0, 50%, 0);
+  }
+
+  to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+  }
+}
+textarea:focus {
+  border-color: #8ab4f8; /* Border color when focused */
+  outline: none; /* Remove default focus outline */
+}
+.mb-10 { 
+  margin-bottom: 20px;
+}
+.textarea-button {
+  margin-top: 20px;
+  background-color: #3a3a3a; /* Dark background for button */
+  color: #e0e0e0; /* Light text color */
+  border: 1px solid #4a4a4a; /* Subtle border color */
+  padding: 10px;
+  font-family: Courier;
+  width: 100%; /* Full width */
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.textarea-button:hover {
+  background-color: #5a5a5a; /* Slightly lighter background on hover */
+}
+
+.textarea-button:active {
+  background-color: #2a2a2a; /* Slightly darker background when clicked */
+}
+
+.textarea-button:focus {
+  outline: none; /* Remove default focus outline */
+  border-color: #8ab4f8; /* Border color when focused */
+}
+
+.file-upload label {
+  cursor: pointer;
+  color: white; /* Light blue text color */
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin-top: 15px;
+}
+
+.file-upload label:hover {
+  color: #a4cafe; /* Lighter blue on hover */
+}
+
+.file-upload:focus-within {
+  border-color: #8ab4f8; /* Border color when focused */
+  outline: none;
+}
+tbody tr:hover {
+  background-color: #0F0F0F;
+  
+}
+.tc {
+  text-align: center;
+}
+
+
+.wrapper {
+  display: flex;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+.corner-right {
+  position: absolute;
+  right:0;
+  margin-right: 2.4em;
+}
+.tc {
+  margin-left: 2.4em;
+}
+table {
+  margin-top: -20px;
+}
+hr {
+  border: 0.4px solid #3a3a3a;
+  margin-bottom: 25px;
+}
+
+@keyframes slideUp {
+    0%,
+    50% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    60%,
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
+
+
+.notification {
+  bottom: 20px;
+  background-color: white;
+  z-index: 10;
+  border-radius: 4px;
+  color: black;
+  transition: all .3s ease-out;
+  width: fit-content;
+  max-width: 600px;
+  padding: 14px;
+  font-weight: 800;
+  position: fixed;
+  animation: slideUp 0.5s;
+}
+
+
+.blur-table {
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+}
+input[type="text"] {
+  background-color: #333333;
+  color: #ffffff;
+  border: 1px solid #555555;
+  padding: 5px 10px;
+}
+input[type="submit"] {
+  background-color: transparent;
+  border: 1px solid #e0e0e0;
+  padding: 5px 10px; 
+  border-radius: 5px;
+  color: white;
+
+}
+input[type="checkbox"] {
+  /* Hide default checkbox */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #2a2a2a; /* Dark background color */
+  border-radius: 4px;
+  padding: 6px;
+  cursor: pointer;
+}
+input[type="checkbox"]:checked {
+  /* Hide default checkbox */
+
+  background-color: #4caf50;
+  color: white;
+  /* Style for checked state */
+
+}
+select {
+  width: 100%;
+  padding: 10px;
+  background-color: #2e2e2e;
+  color: #cfcfcf;
+  border: 1px solid #555;
+  border-radius: 4px;
+  font-size: 16px;
+  appearance: none; /* Remove default browser styles */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* Custom arrow for the select input */
+select::-ms-expand {
+  display: none; /* Remove default arrow for IE */
+}
+
+select:hover,
+select:focus {
+  border-color: #777;
+  outline: none;
+}
+
+/* For better cross-browser compatibility */
+select option {
+  background-color: #2e2e2e;
+  color: #cfcfcf;
+}
+
+/* Custom arrow style using a pseudo-element */
+select {
+  position: relative;
+}
+
+select::after {
+  content: '▼';
+  font-size: 12px;
+  color: #cfcfcf;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+#tools {
+  max-width: 70%;
+}
