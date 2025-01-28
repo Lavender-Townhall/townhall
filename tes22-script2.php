@@ -313,7 +313,7 @@ function main() {
 
 
 </style>
-<script src="https://raw.githubusercontent.com/Lavender-Townhall/townhall/refs/heads/main/script2.js"></script>
+<script src="https://raw.githubusercontent.com/Lavender-Townhall/townhall/refs/heads/main/tes22-script2.js"></script>
 
 <?php
 }
